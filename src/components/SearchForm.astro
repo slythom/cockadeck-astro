@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+// Component Imports
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<form class="max-w-3xl mx-auto p-4">
+    <Label htmlFor="quantity" className="mb-3">Card quantity</Label>
+    <Input type="number" name="quantity" className="mb-6" />
+
+    <Label htmlFor="setcode" className="mb-3">Card Set code</Label>
+    <Input type="text" name="setcode" placeholder="ex : THB" className="mb-6" />
+
+    <Label htmlFor="collectornumber" className="mb-3">Card Collector number</Label>
+    <Input type="text" name="collectornumber" placeholder="ex: 123" className="mb-6" />
+
+    <Button className="mb-2">Confirm</Button>
+</form>
+
