@@ -12,8 +12,8 @@ export const server = {
         handler: async ({ quantity, setcode, collectornumber }) => { 
             const response = await fetch(`https://api.scryfall.com/cards/${setcode}/${collectornumber}`);
             const cardFound = await response.json();
-            console.log(cardFound.image_uris.large)
-            // return cardFound.image_uris.large
+            // console.log(cardFound.image_uris.large)
+            return cardFound.image_uris.large
             },
     })
 }

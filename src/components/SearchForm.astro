@@ -28,7 +28,9 @@ import { Label } from "@/components/ui/label";
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const { error } = await actions.searchCard(formData);
-    if (!error) navigate('/confirmation');
+    const { data, error } = await actions.searchCard(formData);
+    console.log(data)
+    if (!error) {console.log("pas d'erreur!")}
+    // if (!error) navigate('/confirmation');
   })
 </script>
