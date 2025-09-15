@@ -17,11 +17,11 @@ export const server = {
             // console.log("response : ", response)
             const cardfound = await response.json();
             console.log(cardfound)
-            const realSetcode = cardfound.set;
-            const realCollectornumber = cardfound.collector_number;
-            const realName = cardfound.name;
+            const responseSetcode = cardfound.set;
+            const responseCollectornumber = cardfound.collector_number;
+            const responseName = cardfound.name;
 
-            await db.insert(Cards).values({ quantity, setcode: realSetcode, collectornumber: realCollectornumber, name: realName });
+            await db.insert(Cards).values({ quantity, setcode: responseSetcode, collectornumber: responseCollectornumber, name: responseName });
         },
     })
 }
