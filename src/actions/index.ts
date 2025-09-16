@@ -20,8 +20,9 @@ export const server = {
             const responseSetcode = cardfound.set;
             const responseCollectornumber = cardfound.collector_number;
             const responseName = cardfound.name;
+            const responseImage = cardfound.image_uris.normal;
 
-            await db.insert(Cards).values({ quantity, setcode: responseSetcode, collectornumber: responseCollectornumber, name: responseName });
+            await db.insert(Cards).values({ quantity, setcode: responseSetcode, collectornumber: responseCollectornumber, name: responseName, image: responseImage });
         },
     })
 }

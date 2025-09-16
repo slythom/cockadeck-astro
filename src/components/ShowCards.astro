@@ -1,16 +1,36 @@
 ---
-import { db, Cards } from 'astro:db';
+import { db, Cards } from "astro:db";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const comments = await db.select().from(Cards);
 ---
 
-<h2>Comments</h2>
+<h2>My deck:</h2>
 
 {
-  comments.map(({ setcode, name, quantity, collectornumber }) => (
-    <article>
-      <p>{setcode}</p>
-      <p>{name}</p>
-    </article>
+  comments.map(({ setcode, name, quantity, collectornumber, image }) => (
+    <div class="grid grid-cols-4 p-8">
+      <Card>
+        <CardHeader>
+          <CardTitle>{name}</CardTitle>
+          <CardAction>
+            {setcode} - {collectornumber}
+          </CardAction>
+        </CardHeader>
+        <CardContent>
+          <img src={image} />
+        </CardContent>
+        <CardFooter>
+          <p>Quantity: {quantity}</p>
+        </CardFooter>
+      </Card>
+    </div>
   ))
 }

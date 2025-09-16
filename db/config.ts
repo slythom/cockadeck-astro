@@ -6,6 +6,7 @@ const Cards = defineTable({
     setcode: column.text(),
     collectornumber: column.text(),
     name: column.text(),
+    image: column.text(),
 
   }
 })
